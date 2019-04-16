@@ -16,7 +16,7 @@
 import moment from 'moment';
 
 export default {
-  name: 'ImageGallery',
+  name: 'PandaLibrary',
   props: {
     photos: Array
   },

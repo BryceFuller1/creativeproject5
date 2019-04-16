@@ -101,5 +101,15 @@ export default new Vuex.Store({
        }
      },
 
+     async deleteItem(context, id) {
+     try {
+       let response = axios.delete("/api/photos/" + id);
+       context.commit('setPhotos', response.data);
+       return "";
+     } catch (error) {
+       return "";
+     }
+   },
+
   }
 });

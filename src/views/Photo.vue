@@ -9,6 +9,7 @@
       {{formatDate(photo.created)}}
     </p>
     <p>{{photo.description}}</p>
+    <button @click="deletePhoto">Delete</button>
   </div>
 </div>
 </template>
@@ -36,6 +37,10 @@ export default {
       else
         return moment(date).format('d MMMM YYYY');
     },
+      async deletePhoto()
+      {
+        await this.$store.dispatch("deleteItem", this.$route.params.id);
+      }
   },
 
   computed: {

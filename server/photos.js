@@ -85,6 +85,18 @@ router.get("/all", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    await Photo.deleteOne({
+      _id: req.params.id
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 router.get("/:id", async (req, res) => {
   try {
     let item = await Photo.find({

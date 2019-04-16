@@ -1,18 +1,18 @@
 <template>
 <div class="home">
   <h1>Welcome to the gallery of the pandas you can adopt!</h1>
-  <image-gallery :photos="photos" />
+  <panda-library :photos="photos" />
 </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ImageGallery from '@/components/ImageGallery.vue'
+import PandaLibrary from '@/components/PandaLibrary.vue'
 
 export default {
   name: 'home',
   components: {
-    ImageGallery
+    PandaLibrary
   },
   computed: {
     photos() {

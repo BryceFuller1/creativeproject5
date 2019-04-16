@@ -14,7 +14,7 @@
     </div>
     <escape-event @escape="escape"></escape-event>
     <uploader :show="show" @escape="escape" @uploadFinished="uploadFinished" />
-    <image-gallery :photos="photos" />
+    <panda-library :photos="photos" />
   </div>
   <div v-else>
     <p>If you would like to upload photos, please register for an account or login.</p>
@@ -27,7 +27,8 @@
 <script>
 import EscapeEvent from '@/components/EscapeEvent.vue'
 import Uploader from '@/components/Uploader.vue'
-import ImageGallery from '@/components/ImageGallery.vue'
+import PandaLibrary from '@/components/PandaLibrary.vue'
+
 
 
 export default {
@@ -36,7 +37,7 @@ export default {
   components: {
     EscapeEvent,
     Uploader,
-    ImageGallery
+    PandaLibrary
   },
   data() {
     return {
