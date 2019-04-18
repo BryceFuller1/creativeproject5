@@ -9,9 +9,9 @@
         <div class="modal-body">
           <p v-if="error" class="error">{{error}}</p>
           <form @submit.prevent="upload">
-            <input v-model="title" placeholder="Title">
+            <input v-model="title" placeholder="Species">
             <p></p>
-            <textarea v-model="description" placeholder="Description"></textarea>
+            <input v-model="description" placeholder="Price">
             <p></p>
             <input type="file" name="photo" @change="fileChanged">
             <p></p>

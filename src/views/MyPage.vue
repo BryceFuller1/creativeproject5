@@ -1,19 +1,20 @@
 <template>
 <div>
   <div v-if="user">
+    <div>
+      <h1>{{user.name}}</h1>
+    </div>
     <div class="header">
       <div>
-        <h1>{{user.name}}</h1>
-      </div>
-      <div>
         <p>
-          <a @click="toggleUpload"><i class="far fa-image"></i></a>
-          <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
+          <button @click="toggleUpload">upload a photo</button>
+          <button href="#" @click="logout">Click to logout</button>
         </p>
       </div>
     </div>
     <escape-event @escape="escape"></escape-event>
     <uploader :show="show" @escape="escape" @uploadFinished="uploadFinished" />
+    <h2>(click on a post to view or delete it)</h2>
     <panda-library :photos="photos" />
   </div>
   <div v-else>
@@ -83,9 +84,20 @@ export default {
 
   },
 }
+
 </script>
 
 <style scoped>
+h1 {
+  margin: 20px;
+  font-size: 40px;
+  
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+}
 .header {
   display: flex;
 }

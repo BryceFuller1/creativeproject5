@@ -1,12 +1,16 @@
 <template>
 <div class="home">
-  <h1>Welcome to the gallery of the pandas you can adopt!</h1>
+  <h1>Exotic Animalz For Sale</h1>
   <panda-library :photos="photos" />
+  <div class="footer">
+    <a href="https://github.com/BryceFuller1/creativeproject5">My github</a>
+  </div>
 </div>
 </template>
 
 <script>
 // @ is an alias to /src
+
 import PandaLibrary from '@/components/PandaLibrary.vue'
 
 export default {
@@ -26,8 +30,24 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 h1 {
-  font-size: 30px;
+  font-size: 60px;
+  text-align: center;
 }
+h2 {
+  font-size: 15px;
+  text-align: center;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+
+   color: white;
+   text-align: center;
+}
+
 </style>

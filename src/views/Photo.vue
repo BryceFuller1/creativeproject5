@@ -1,4 +1,5 @@
 <template>
+
 <div>
   <div  v-for="photo in photoId" v-bind:key="photo._id">
     <img :src="photo.path" />
@@ -8,8 +9,10 @@
       <span v-if="photo.user.name">{{photo.user.name}}, </span>
       {{formatDate(photo.created)}}
     </p>
-    <p>{{photo.description}}</p>
+    <p>${{photo.description}}</p>
+    <h2>Delete the post</h2>
     <button @click="deletePhoto">Delete</button>
+
   </div>
 </div>
 </template>
@@ -23,13 +26,10 @@ export default {
   name: 'photo',
   data() {
     return {
-      creating: true,
-      addedName: '',
-      addedProblem: '',
-      show: false,
+      name: '',
+      description: '',
     }
   },
-
   methods: {
     formatDate(date) {
       if (moment(date).diff(Date.now(), 'days') < 15)
@@ -40,7 +40,9 @@ export default {
       async deletePhoto()
       {
         await this.$store.dispatch("deleteItem", this.$route.params.id);
-      }
+      },
+
+
   },
 
   computed: {
@@ -65,17 +67,17 @@ export default {
 <style scoped>
 .photoTitle {
   margin: 0px;
-  font-size: 1.2em;
+  font-size: 30px;
 }
 
 .photoDate {
   margin: 0px;
-  font-size: 0.9em;
+  font-size: 30px;
   font-weight: normal;
 }
 
 p {
-  margin: 1px;
+  font-size: 25px;
 }
 
 .image {
@@ -88,5 +90,10 @@ img {
   max-width: 600px;
   max-height: 600px;
   image-orientation: from-image;
+}
+
+.good {
+  display: flex;
+  margin-bottom: 5px;
 }
 </style>

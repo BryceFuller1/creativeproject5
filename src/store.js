@@ -9,7 +9,7 @@ export default new Vuex.Store({
     user: null,
     photos: [],
     singlePhoto: [],
-
+    tickets: [],
   },
   mutations: {
     setUser(state, user) {
@@ -110,6 +110,37 @@ export default new Vuex.Store({
        return "";
      }
    },
+
+   async addTicket(context, data) {
+     try {
+       await axios.post("/api/tickets", data);
+       return '';
+     } catch (error) {
+       console.log(error);
+     }
+   },
+   async getTickets(context) {
+      try {
+        let response = await axios.get("/api/tickets");
+        context.commit('setTickets', response.data);
+        return '';
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+
+    async deleteTicket(context, id) {
+      try {
+        let response = axios.delete("/api/tickets/" + id);
+        context.commit('setTickets', response.data);
+        return "";
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+
 
   }
 });

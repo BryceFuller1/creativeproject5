@@ -5,6 +5,7 @@ import Register from './views/Register.vue'
 import MyPage from './views/MyPage.vue'
 import Login from './views/Login.vue'
 import Photo from './views/Photo.vue'
+import Cart from './views/Cart.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
      path: '/photo/:id',
      name: 'photo',
      component: Photo
+   },
+   {
+     path: '/cart',
+     name: 'cart',
+     component: Cart
    }
   ]
 })

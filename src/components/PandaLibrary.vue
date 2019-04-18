@@ -7,7 +7,7 @@
       <span v-if="photo.user.name">{{photo.user.name}}, </span>
       {{formatDate(photo.created)}}
     </p>
-    <p>{{photo.description}}</p>
+    <p class="bottomz">${{photo.description}}</p>
   </div>
 </div>
 </template>
@@ -34,29 +34,45 @@ export default {
 <style scoped>
 .photoTitle {
   margin: 0px;
-  font-size: 1.2em;
+  font-size: 40px;
+  text-align: center;
 }
 
 .photoDate {
   margin: 0px;
-  font-size: 0.9em;
+  font-size: 40px ;
   font-weight: normal;
+  text-align: center;
 }
 
 p {
   margin: 0px;
   font-size: 40px;
+  text-align: center;
 }
-
+/*
 .image {
   margin: 0 0 1.5em;
   display: inline-block;
   width: 100%;
 }
+*/
+
 
 .image img {
   max-width: 600px;
   max-height: 600px;
   image-orientation: from-image;
+  
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottomz {
+  margin-bottom: 15px;
 }
 </style>

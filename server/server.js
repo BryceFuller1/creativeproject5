@@ -23,6 +23,7 @@ app.use("/api/users", users.routes);
 const photos = require("./photos.js");
 app.use("/api/photos", photos.routes);
 
-
+const tickets = require("./tickets.js");
+app.use("/api/tickets", tickets.routes);
 
 app.listen(3002, () => console.log('Server listening on port 3002!'));

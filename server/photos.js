@@ -85,6 +85,7 @@ router.get("/all", async (req, res) => {
   }
 });
 
+
 router.delete("/:id", async (req, res) => {
   try {
     await Photo.deleteOne({
@@ -108,6 +109,8 @@ router.get("/:id", async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+
 
 module.exports = {
   model: Photo,

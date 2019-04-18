@@ -6,7 +6,10 @@
         <router-link to="/" class="pure-menu-link">Home</router-link>
       </li>
       <li >
-        <router-link to="/mypage" class="pure-menu-link">My pandas</router-link>
+        <router-link to="/mypage" class="pure-menu-link">My Listings</router-link>
+      </li>
+      <li >
+        <router-link to="/cart" class="pure-menu-link">Reviews Page</router-link>
       </li>
     </ul>
   </div>
