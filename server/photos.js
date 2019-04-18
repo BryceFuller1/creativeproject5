@@ -6,7 +6,7 @@ const auth = require("./auth.js");
 // Configure multer so that it will upload to '/public/images'
 const multer = require('multer')
 const upload = multer({
-  dest: '../public/images/',
+  dest: '/var/www/cp5.brycefuller.org/images/',
   limits: {
     fileSize: 10000000
   }

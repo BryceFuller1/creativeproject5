@@ -91,7 +91,6 @@ export default {
 h1 {
   margin: 20px;
   font-size: 40px;
-  
 }
 
 h2 {
